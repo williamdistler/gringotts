@@ -9,10 +9,11 @@ public class Gerente extends Conta {
         System.out.println("Cliente: " + nome + ". Adicionado com sucesso.");
     }
 
-    public void exibirDadosDeUmCliente(int conta) {
+    public void exibirDadosDeUmCliente(Integer conta) {
         System.out.println("----------------------------------------------");
-        for (Cliente cliente : Banco.clientes) {
-            if (cliente.getNumero() == conta) {
+        Cliente cliente = Banco.clientes.get(conta);
+
+
                 System.out.println("Conta: " + cliente.getNumero());
                 System.out.println("Senha: " + cliente.getSenha());
                 System.out.println("Nome: " + cliente.getNome());
@@ -25,8 +26,6 @@ public class Gerente extends Conta {
                 } else if (cliente.getTipoConta() == 3) {
                     System.out.println("Tipo da Conta: Standard");
                 }
-            }
-        }
     }
 
     public void removerCliente(int conta) {

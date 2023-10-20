@@ -2,7 +2,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         Gerente gerente = new Gerente();
-        Cliente cliente = new Cliente(1000.00, "fulano@gmail.com", "estrada de itapecerica, 5859", 2, 2, "Yuri", "12345");
+        Conta conta = new Conta(1000.00, "fulano@gmail.com", "estrada de itapecerica, 5859", TipoConta.STANDARD, 2, "Yuri", "12345");
+        Cliente cliente = new Cliente(conta);
         cliente.adicionarClienteNaLista(cliente);
         gerente.adicionarNovoCliente(10000.00, "fulano.ciclano@gmail.com", "estrada de itapecerica, 5859", 1, 1, "William", "12345");
         cliente.verSaldoNaConta(2);
